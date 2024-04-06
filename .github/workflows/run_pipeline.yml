@@ -3,7 +3,7 @@ name: Daily CSV Generation
 on:
   workflow_dispatch: # Allow manual triggering
   schedule:
-    - cron: '0 18 * * *' # Schedule the workflow to run every day at 6 PM UTC (adjust the time zone as needed)
+    - cron: '0 11 * * *' # Schedule the workflow to run every day at 6 PM UTC (adjust the time zone as needed)
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         files: |
           pipeline/outputs/my-stocks.csv
         token: ${{ secrets.MY_TOKEN }}
-        tag_name: v1.0
+        tag_name: v2.0
 
     - name: Set Release Name
       run: echo "::set-output name=release_name::My Release"
